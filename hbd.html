@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff7eb9, #ff65a3, #7afcff, #feff9c);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            animation: bgChange 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgChange {
+            0% {
+                background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+            }
+            50% {
+                background: linear-gradient(135deg, #7afcff, #feff9c);
+            }
+            100% {
+                background: linear-gradient(135deg, #fcb045, #fd1d1d, #833ab4);
+            }
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: slideIn 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff4081;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            text-shadow: 0 0 15px rgba(255, 0, 150, 0.8);
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff4081, 0 0 20px #ff4081;
+            }
+            to {
+                text-shadow: 0 0 20px #ff4081, 0 0 40px #ff4081;
+            }
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            color: #333;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: bounce 1.8s infinite alternate;
+        }
+
+        .btn:hover {
+            background-color: #ff1a75;
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .balloons {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: -1;
+        }
+
+        .balloon {
+            width: 100px;
+            height: 150px;
+            background: radial-gradient(circle, #ff5f6d, #ffc371);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(1) {
+            left: 20%;
+            animation-duration: 6s;
+        }
+
+        .balloon:nth-child(2) {
+            left: 40%;
+            animation-duration: 5s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 60%;
+            animation-duration: 4.5s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 80%;
+            animation-duration: 6.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-40px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff4081;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #ffd700;
+        }
+
+        .confetti:nth-child(even) {
+            background-color: #7afcff;
+        }
+
+        .confetti:nth-child(1) {
+            left: 20%;
+            animation-duration: 4s;
+        }
+
+        .confetti:nth-child(2) {
+            left: 30%;
+            animation-duration: 3.5s;
+        }
+
+        .confetti:nth-child(3) {
+            left: 40%;
+            animation-duration: 4.2s;
+        }
+
+        .confetti:nth-child(4) {
+            left: 50%;
+            animation-duration: 3.8s;
+        }
+
+        .confetti:nth-child(5) {
+            left: 60%;
+            animation-duration: 4.4s;
+        }
+
+        .confetti:nth-child(6) {
+            left: 70%;
+            animation-duration: 4.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Mama</h1>
+        <p>তোর জীবন দীর্ঘতর হোক আরও সুন্দর হোক</p>
+        <p>তোর জন্য শুভকামনা 🎉</p>
+        <a href="celebrate.html" class="btn">Let’s Celebrate!</a>
+    </div>
+
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <!-- Confetti falling effect -->
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+    <div class="confetti"></div>
+</body>
+</html>
